@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: sans-serif;
+  background-color: #efefef;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.11);
+  padding: 1rem;
+  overflow: hidden;
+}
+nav p {
+  color: #23424a;
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+nav .menu-icon {
+  border: 0;
+  background-color: transparent;
+  font-size: 1.5rem;
+  color: #0a5f34;
+  cursor: pointer;
+  outline: none;
+  display: none;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+nav ul li {
+  margin: 0 0.7rem;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #0a5f34;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+nav ul li a::after {
+  content: '';
+  background-color: #0a5f34;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  transition: transform 0.5s ease;
+  opacity: 0;
+}
+
+nav ul li a:hover::after {
+  transform: translateY(-18px);
+  opacity: 1;
+}
+
+@media screen and (max-width: 500px) {
+  nav ul {
+    text-align: center;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.603);
+    position: fixed;
+    z-index: 10;
+    top: 65px;
+    left: 10%;
+    width: 80%;
+    transform: translateX(130%);
+
+    transition: transform 0.5s ease;
+  }
+
+  nav ul.show {
+    transform: translateX(0);
+  }
+  nav .menu-icon {
+    display: block;
+  }
+
+  nav ul li {
+    padding: 0.5rem 0;
+    width: 100%;
+    border-bottom: 1px solid hsla(150, 81%, 21%, 0.082);
+  }
+  nav ul li:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0.5rem;
+  }
+}
+
+/* Hero */
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: rem;
+}
+
+@media screen and (max-width: 900px) {
+  h1 {
+    font-size: 30px;
+  }
+}
+
+.container {
+  width: 80%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hero {
+  background-color: #23424a;
+  padding: 100px 0px;
+  color: #fff;
+}
+.hero p {
+  margin-bottom: 3em;
+  line-height: 1.5;
+}
+
+.hero__text {
+  width: 60%;
+}
+
+.btn {
+  display: inline-block;
+  background-color: aqua;
+  padding: 0.75em 2em;
+  border-radius: 100px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #23424a;
+  font-weight: bold;
+}
+
+.btn:hover,
+.btn:focus {
+  opacity: 0.7;
+}
+
+.btn:active {
+  outline: #23424a;
+  box-shadow: inset 1px 1px 6px 2px rgba(0, 0, 0, 0.507);
+}
